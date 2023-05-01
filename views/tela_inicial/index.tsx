@@ -13,7 +13,7 @@ const config = {
   }
 };
 
-export default function App() {
+export default function TelaInicial({ navigation }: any)  {
   const [loadingFont, setLoadingFont] = useState<boolean>(false);
   useEffect(()=>{
     async function loadFonts(){
@@ -59,7 +59,10 @@ export default function App() {
               borderRadius: 15,
               borderColor: '#fff',
               backgroundColor: '#fea9a7'}}
-            onPress={() => console.log("hello world")}
+            onPress={() => {
+                console.log("click action");
+                navigation.navigate('TelaPrincipal');
+            }}
           >
             <Text style={{ 
               fontSize: 22,
