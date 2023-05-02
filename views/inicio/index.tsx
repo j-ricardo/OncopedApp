@@ -61,7 +61,7 @@ export default function TelaInicial({ navigation }: any)  {
               backgroundColor: '#fea9a7'}}
             onPress={() => {
                 console.log("click action");
-                navigation.navigate('TelaPrincipal');
+                navigation.navigate('ViewInicio');
             }}
           >
             <Text style={{ 
