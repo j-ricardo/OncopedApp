@@ -12,7 +12,7 @@ export default function ViewInicio({ navigation }: any) {
                 <VStack 
                     space={4} 
                     alignItems="center"
-                    style={{marginTop: 20}}
+                    style={{marginTop: 80}}
                 >
                     <Center >
                         <Text>Clique na opção que</Text>
