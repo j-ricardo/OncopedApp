@@ -6,6 +6,7 @@ import * as Font from 'expo-font';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
+
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
 const config = {
   dependencies: {

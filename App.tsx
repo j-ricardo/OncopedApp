@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, BackHandler } from 'react-native';
 import { NativeBaseProvider, Center, Button, extendTheme } from "native-base";
 import React, {useState, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
@@ -12,6 +12,9 @@ import {
 import TelaInicial from './views/inicio/index';
 import ViewInicio from './views/principal/index';
 import ViewTerapias from './views/terapias';
+import ViewQuimioterapia from './views/terapias/quimioterapia';
+import ViewRadioterapia from './views/terapias/radioterapia';
+import ViewSinaisSintomas from './views/terapias/sinais_sintomas';
 
 const Stack = createDrawerNavigator();
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
@@ -22,6 +25,7 @@ const config = {
 };
 
 function CustomDrawerContent(props: any) {
+
   return (
     <DrawerContentScrollView {...props}>
       <Center
@@ -51,16 +55,14 @@ export default function App() {
       <NavigationContainer>
         <Stack.Navigator 
           id="LeftDrawer"
-          initialRouteName="TelaInicial"
           useLegacyImplementation
-          screenOptions={{               
-              drawerPosition: 'left',
-              drawerStyle: {height: '100%'},
-              headerTransparent: true,
-              headerTitleStyle: {
-                color: 'transparent'
-              }
-          }}          
+          initialRouteName="TelaInicial"
+          screenOptions={{   
+            headerTintColor: '#fff',            
+            drawerPosition: 'left',
+            drawerStyle: {height: '100%'},
+            headerTransparent: true,
+          }}                   
           drawerContent={(props) => <CustomDrawerContent {...props} />}
         >          
           <Stack.Screen
@@ -77,7 +79,10 @@ export default function App() {
             name="ViewInicio"
             component={ViewInicio}
             options={{
-              title: 'Início'
+              title: 'Início',
+              headerTitleStyle: {
+                display: 'none'
+              }
             }}
           />
           <Stack.Screen
@@ -85,6 +90,27 @@ export default function App() {
             component={ViewTerapias}
             options={{
               title: 'Terapias'
+            }}
+          />
+          <Stack.Screen
+            name="ViewQuimioterapia"
+            component={ViewQuimioterapia}
+            options={{
+              title: 'Quimioterapia'
+            }}
+          />
+          <Stack.Screen
+            name="ViewRadioterapia"
+            component={ViewRadioterapia}
+            options={{
+              title: 'Radioterapia'
+            }}
+          />
+          <Stack.Screen
+            name="ViewSinaisSintomas"
+            component={ViewSinaisSintomas}
+            options={{
+              title: 'Sinais e Sintomas'
             }}
           />
         </Stack.Navigator>
