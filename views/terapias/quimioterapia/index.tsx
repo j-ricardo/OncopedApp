@@ -5,7 +5,9 @@ import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 
 
-export default function ViewQuimioterapia(){
+
+
+export default function ViewQuimioterapia({ navigation }: any){
     return (
         <NativeBaseProvider>
             <View style={{
@@ -68,6 +70,10 @@ export default function ViewQuimioterapia(){
                                         height: 50,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
+                                    }}                                    
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewOQueEhQuimioterapia');
                                     }}
                                 >
                                     <Text style={{ color: "white", fontSize: 18,}}>O que é?</Text> 

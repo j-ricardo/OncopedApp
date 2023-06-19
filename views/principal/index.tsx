@@ -13,7 +13,16 @@ export default function ViewInicio({ navigation }: any) {
         <NativeBaseProvider>
             <View style={{ flex:1, backgroundColor: 'transparent' }}>
                 <View>
-                    <Image style={{ height: height, width: width, position: 'absolute', top:0, left:0 }} source={require('../../assets/fundo_azul.png')} />
+                    <Image 
+                        source={require('../../assets/fundo_azul.png')} 
+                        style={{ 
+                            height: height, 
+                            width: width, 
+                            position: 'absolute', 
+                            top: 0, 
+                            left: 0 
+                        }} 
+                    />
                 </View>
                 <ScrollView style={{ flex:1 }}>
                     <VStack 

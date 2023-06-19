@@ -13,8 +13,11 @@ import TelaInicial from './views/inicio/index';
 import ViewInicio from './views/principal/index';
 import ViewTerapias from './views/terapias';
 import ViewQuimioterapia from './views/terapias/quimioterapia';
+import ViewOQueEhQuimioterapia from './views/terapias/quimioterapia/01_o_que_e';
 import ViewRadioterapia from './views/terapias/radioterapia';
 import ViewSinaisSintomas from './views/terapias/sinais_sintomas';
+
+
 
 const Stack = createDrawerNavigator();
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
@@ -24,7 +27,7 @@ const config = {
   }
 };
 
-function CustomDrawerContent(props: any) {
+function CustomDrawerContent(props: any) {  
 
   return (
     <DrawerContentScrollView {...props}>
@@ -57,6 +60,7 @@ export default function App() {
           id="LeftDrawer"
           useLegacyImplementation
           initialRouteName="TelaInicial"
+          backBehavior='order'
           screenOptions={{   
             headerTintColor: '#fff',            
             drawerPosition: 'left',
@@ -97,6 +101,16 @@ export default function App() {
             component={ViewQuimioterapia}
             options={{
               title: 'Quimioterapia'
+            }}
+          />
+          <Stack.Screen
+            name="ViewOQueEhQuimioterapia"
+            component={ViewOQueEhQuimioterapia}
+            options={{
+              title: 'O que é quimioterapia',
+              headerTitleStyle: {
+                display: 'none'
+              }
             }}
           />
           <Stack.Screen
