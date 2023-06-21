@@ -1,11 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, ScrollView, Image, Text } from 'react-native';
+import { View, ScrollView, Image, Text, BackHandler } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 
 
-export default function ViewRadioterapia(){
+export default function ViewRadioterapia({ navigation }: any){
+    useEffect(() => {
+        const backAction = () => {
+            navigation.navigate('ViewTerapias');
+            return true;
+        };
+
+        const backHandler = BackHandler.addEventListener(
+            'hardwareBackPress',
+            backAction,
+        );
+        return () => backHandler.remove();
+    }, []);
+
     return (
         <NativeBaseProvider>
             <View style={{
@@ -65,37 +78,76 @@ export default function ViewRadioterapia(){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        height: 60,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewOQueEhRadioterapia');
+                                    }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>O que é?</Text> 
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        O que é?
+                                    </Text> 
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
                                 <Button                                    
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        height: 60,
                                         borderRadius: 70,
-                                        backgroundColor: '#96b9e0'                                        
+                                        backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewComoEhFeitaRadioterapia');
+                                    }}  
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Como é feita?</Text> 
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Como é feita?
+                                    </Text> 
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        height: 60,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0',
                                         marginBottom: 30
-                                    }}
+                                    }}  
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewOQueEsperarRadioterapia');
+                                    }}   
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>O que esperar?</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        O que esperar?
+                                    </Text>
                                 </Button>
                             </Center>
                         </VStack>

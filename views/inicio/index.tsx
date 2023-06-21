@@ -47,7 +47,7 @@ export default function TelaInicial({ navigation }: any)  {
           <Text style={{ 
             textTransform: 'uppercase', 
             color: '#fea9a7', 
-            fontSize: 22}}
+            fontSize: 20}}
           >
             Bem vindo à
           </Text>
@@ -65,10 +65,11 @@ export default function TelaInicial({ navigation }: any)  {
               navigation.navigate('ViewInicio');
             }}
           >
-            <Text style={{ 
-              fontSize: 22,
-              color: '#fff'
-            }}
+            <Text 
+              style={{ 
+                color: "white", 
+                fontSize: 22,
+              }}
             >
               Entrar
             </Text>

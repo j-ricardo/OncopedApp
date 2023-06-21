@@ -14,7 +14,12 @@ import ViewInicio from './views/principal/index';
 import ViewTerapias from './views/terapias';
 import ViewQuimioterapia from './views/terapias/quimioterapia';
 import ViewOQueEhQuimioterapia from './views/terapias/quimioterapia/01_o_que_e';
+import ViewComoEhFeitaQuimioterapia from './views/terapias/quimioterapia/02_como_e_feita';
+import ViewOQueEsperarQuimioterapia from './views/terapias/quimioterapia/03_o_que_esperar';
 import ViewRadioterapia from './views/terapias/radioterapia';
+import ViewOQueEhRadioterapia from './views/terapias/radioterapia/01_o_que_e';
+import ViewComoEhFeitaRadioterapia from './views/terapias/radioterapia/02_como_e_feita';
+import ViewOQueEsperarRadioterapia from './views/terapias/radioterapia/03_o_que_esperar';
 import ViewSinaisSintomas from './views/terapias/sinais_sintomas';
 
 
@@ -59,7 +64,7 @@ export default function App() {
         <Stack.Navigator 
           id="LeftDrawer"
           useLegacyImplementation
-          initialRouteName="TelaInicial"
+          initialRouteName="initialRoute"
           backBehavior='order'
           screenOptions={{   
             headerTintColor: '#fff',            
@@ -107,8 +112,37 @@ export default function App() {
             name="ViewOQueEhQuimioterapia"
             component={ViewOQueEhQuimioterapia}
             options={{
-              title: 'O que é quimioterapia',
+              title: 'O que é quimioterapia?',
               headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
+                display: 'none'
+              }
+            }}
+          />
+          <Stack.Screen
+            name="ViewComoEhFeitaQuimioterapia"
+            component={ViewComoEhFeitaQuimioterapia}
+            options={{
+              title: 'Como é feita?',
+              headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
+                display: 'none'
+              }
+            }}
+          />
+          <Stack.Screen
+            name="ViewOQueEsperarQuimioterapia"
+            component={ViewOQueEsperarQuimioterapia}
+            options={{
+              title: 'O que esperar?',
+              headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
                 display: 'none'
               }
             }}
@@ -121,6 +155,45 @@ export default function App() {
             }}
           />
           <Stack.Screen
+            name="ViewOQueEhRadioterapia"
+            component={ViewOQueEhRadioterapia}
+            options={{
+              title: 'O que é radioterapia?',
+              headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
+                display: 'none'
+              }
+            }}
+          />
+          <Stack.Screen
+            name="ViewComoEhFeitaRadioterapia"
+            component={ViewComoEhFeitaRadioterapia}
+            options={{
+              title: 'Como é feita?',
+              headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
+                display: 'none'
+              }
+            }}
+          />
+          <Stack.Screen
+            name="ViewOQueEsperarRadioterapia"
+            component={ViewOQueEsperarRadioterapia}
+            options={{
+              title: 'O que esperar?',
+              headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
+                display: 'none'
+              }
+            }}
+          />
+          <Stack.Screen
             name="ViewSinaisSintomas"
             component={ViewSinaisSintomas}
             options={{
@@ -130,6 +203,5 @@ export default function App() {
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
-    
   );
 }

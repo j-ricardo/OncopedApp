@@ -1,11 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { View, ScrollView, Image, Text } from 'react-native';
+import { View, ScrollView, Image, Text, BackHandler } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 
+export default function ViewSinaisSintomas({ navigation }: any){
+    useEffect(() => {
+        const backAction = () => {
+            navigation.navigate('ViewTerapias');
+            return true;
+        };
 
-export default function ViewSinaisSintomas(){
+        const backHandler = BackHandler.addEventListener(
+            'hardwareBackPress',
+            backAction,
+        );
+        return () => backHandler.remove();
+    }, []);
+
     return (
         <NativeBaseProvider>
             <View style={{

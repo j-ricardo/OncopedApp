@@ -5,10 +5,10 @@ import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 
 
-export default function ViewOQueEhQuimioterapia({ navigation }: any){
+export default function ViewOQueEhRadioterapia({ navigation }: any){
     useEffect(() => {
         const backAction = () => {
-            navigation.navigate('ViewQuimioterapia');
+            navigation.navigate('ViewRadioterapia');
             return true;
         };
 
@@ -50,7 +50,7 @@ export default function ViewOQueEhQuimioterapia({ navigation }: any){
                         marginBottom: 20
                     }}
                 >
-                    Quimioterapia
+                    Radioterapia
                 </Text>
             </View>
             <View
@@ -77,7 +77,7 @@ export default function ViewOQueEhQuimioterapia({ navigation }: any){
                             margin: 'auto',
                             resizeMode: 'contain' 
                         }}                
-                        source={require('../../../../assets/ICO_QUIMIOTERAPIA/QUIMIOTERAPIA_O_QUE_E.png')} 
+                        source={require('../../../../assets/ICO_RADIO/RADIOTERAPIA_O_QUE_E.png')} 
                     />
                 </View>       
                 <View style={{
@@ -117,7 +117,7 @@ export default function ViewOQueEhQuimioterapia({ navigation }: any){
                         <View
                             style={{
                                 backgroundColor: '#edeff3', 
-                                paddingHorizontal: 20,
+                                paddingHorizontal: 60,
                                 paddingVertical: 40,
                                 borderRadius: 100,
                                 flex: 1
@@ -131,15 +131,13 @@ export default function ViewOQueEhQuimioterapia({ navigation }: any){
                                     textAlign: 'center'
                                 }}
                             >
-                                É um tipo de tratamento para o
-                                câncer em que se utilizam
-                                medicamentos que destroem
-                                as células doentes que estão
-                                formando o tumor e impede
-                                que se espalhem pelo corpo.
-                                Os quimioterápicos atuam sem
-                                distinção, e atingem também
-                                as células normais.
+                                É o tratamento em que se
+                                utiliza um tipo de energia
+                                para destruir ou impedir
+                                que as células do tumor
+                                aumentem: os raios
+                                ionizantes (raio-x, por
+                                exemplo).
                             </Text>
                         </View>
                     </View> 
