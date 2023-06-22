@@ -3,20 +3,16 @@ import { View, ScrollView, Image, Text, BackHandler } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
+import useBackButton from '../../../utils/navigation';
 
 export default function ViewSinaisSintomas({ navigation }: any){
-    useEffect(() => {
-        const backAction = () => {
-            navigation.navigate('ViewTerapias');
-            return true;
-        };
+    const backAction = () => {
+        navigation.pop();
+        navigation.navigate('ViewInicio');
+        return true;
+    };
 
-        const backHandler = BackHandler.addEventListener(
-            'hardwareBackPress',
-            backAction,
-        );
-        return () => backHandler.remove();
-    }, []);
+    //useBackButton(backAction);
 
     return (
         <NativeBaseProvider>
@@ -73,9 +69,9 @@ export default function ViewSinaisSintomas({ navigation }: any){
                             style={{marginTop: 10, width: '100%'}}
                         >
                             <Center style={{ width: '100%' }}>
-                                <Text style={{color: '#fea9a7', fontSize: 18}}>Selecione a opção</Text>
-                                <Text style={{color: '#fea9a7', fontSize: 18}}>que você deseja saber</Text>
-                                <Text style={{color: '#fea9a7', fontSize: 18}}>mais informações</Text>
+                                <Text style={{ color: '#fea9a7', fontSize: 18, fontWeight: '900' }}>Selecione a opção</Text>
+                                <Text style={{ color: '#fea9a7', fontSize: 18, fontWeight: '900' }}>que você deseja saber</Text>
+                                <Text style={{ color: '#fea9a7', fontSize: 18, fontWeight: '900' }}>mais informações</Text>
                             </Center>
                             <Center style={{ width: '100%' }}>
                                 <Button
@@ -86,31 +82,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Febre</Text> 
-                                </Button>
-                            </Center>
-                            <Center style={{ width: '100%' }}>
-                                <Button                                    
-                                    style={{
-                                        width: '70%',
-                                        height: 50,
-                                        borderRadius: 70,
-                                        backgroundColor: '#96b9e0'                                        
-                                    }}
-                                >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Dor</Text> 
-                                </Button>
-                            </Center>
-                            <Center style={{ width: '100%' }}>
-                                <Button
-                                    style={{
-                                        width: '70%',
-                                        height: 50,
-                                        borderRadius: 70,
-                                        backgroundColor: '#96b9e0'
-                                    }}
-                                >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Fadiga / cansaço</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Febre
+                                    </Text> 
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -122,7 +103,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Nausea e Vômito</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Dor
+                                    </Text> 
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -134,7 +124,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Distúrbios do sono</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Fadiga / cansaço
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -146,7 +145,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Diarréia</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Nausea e Vômito
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -158,7 +166,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Constipação</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Distúrbios do sono
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -170,7 +187,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Distúrbios Psicoemocionais</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Diarréia
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -182,7 +208,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Convulsões</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Constipação
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -194,7 +229,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Distúrbios Sensoriais</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Distúrbios Psicoemocionais
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -206,7 +250,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Mucose Oral</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Convulsões
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -218,7 +271,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Anorexia</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Distúrbios Sensoriais
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -230,7 +292,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Neuropatias</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Mucose Oral
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -242,7 +313,16 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Sangramentos</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Anorexia
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -254,7 +334,58 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         backgroundColor: '#96b9e0'
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Falta de Ar</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Neuropatias
+                                    </Text>
+                                </Button>
+                            </Center>
+                            <Center style={{ width: '100%' }}>
+                                <Button
+                                    style={{
+                                        width: '70%',
+                                        height: 50,
+                                        borderRadius: 70,
+                                        backgroundColor: '#96b9e0'
+                                    }}
+                                >
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Sangramentos
+                                    </Text>
+                                </Button>
+                            </Center>
+                            <Center style={{ width: '100%' }}>
+                                <Button
+                                    style={{
+                                        width: '70%',
+                                        height: 50,
+                                        borderRadius: 70,
+                                        backgroundColor: '#96b9e0'
+                                    }}
+                                >
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Falta de Ar
+                                    </Text>
                                 </Button>
                             </Center>
                             <Center style={{ width: '100%' }}>
@@ -264,10 +395,19 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         height: 50,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0',
-                                        marginBottom: 30
+                                        marginBottom: 20
                                     }}
                                 >
-                                    <Text style={{ color: "white", fontSize: 18,}}>Alopécia</Text>
+                                    <Text 
+                                        style={{ 
+                                            color: "white", 
+                                            fontSize: 19, 
+                                            fontWeight: '900', 
+                                            textAlign: 'center' 
+                                        }}
+                                    >
+                                        Alopécia
+                                    </Text>
                                 </Button>
                             </Center>
                         </VStack>

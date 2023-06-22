@@ -3,20 +3,16 @@ import { View, ScrollView, Image, Text, BackHandler } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
+import useBackButton from '../../../utils/navigation';
 
 export default function ViewQuimioterapia({ navigation }: any){
-    useEffect(() => {
-        const backAction = () => {
-            navigation.navigate('ViewTerapias');
-            return true;
-        };
+    const backAction = () => {
+        navigation.pop();
+        navigation.navigate('ViewInicio');        
+        return true;
+    };
 
-        const backHandler = BackHandler.addEventListener(
-            'hardwareBackPress',
-            backAction,
-        );
-        return () => backHandler.remove();
-    }, []);
+    //useBackButton(backAction);
 
     return (
         <NativeBaseProvider>

@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, BackHandler } from 'react-native';
 import { NativeBaseProvider, Center, Button, extendTheme } from "native-base";
 import React, {useState, useEffect} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
+import { NavigationContainer } from '@react-navigation/native';
 import { 
   createDrawerNavigator,
   DrawerContentScrollView,
@@ -21,8 +21,6 @@ import ViewOQueEhRadioterapia from './views/terapias/radioterapia/01_o_que_e';
 import ViewComoEhFeitaRadioterapia from './views/terapias/radioterapia/02_como_e_feita';
 import ViewOQueEsperarRadioterapia from './views/terapias/radioterapia/03_o_que_esperar';
 import ViewSinaisSintomas from './views/terapias/sinais_sintomas';
-
-
 
 const Stack = createDrawerNavigator();
 const LinearGradient = require('expo-linear-gradient').LinearGradient;

@@ -3,23 +3,18 @@ import { Text, View, ScrollView, Image, TouchableOpacity, Dimensions, BackHandle
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Spacer, Center, NativeBaseProvider, Button } from "native-base";
 import React, {useState, useEffect} from 'react';
+import useBackButton from '../../utils/navigation';
 
 let width = Dimensions.get('window').width
 let height = Dimensions.get('window').height
 
 export default function ViewTerapias({ navigation }: any){
-    useEffect(() => {
-        const backAction = () => {
-            navigation.navigate('ViewInicio');
-            return true;
-        };
-
-        const backHandler = BackHandler.addEventListener(
-            'hardwareBackPress',
-            backAction,
-        );
-        return () => backHandler.remove();
-    }, []);
+    const backAction = () => {
+        navigation.pop();
+        navigation.navigate('ViewInicio');
+        return true;
+    };
+    //useBackButton(backAction);
 
     return (
         <NativeBaseProvider>
