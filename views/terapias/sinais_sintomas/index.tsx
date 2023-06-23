@@ -81,6 +81,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewFebreSinaisSintomas');
+                                    }}
                                 >
                                     <Text 
                                         style={{ 
@@ -101,6 +105,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         height: 50,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
+                                    }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewDorSintomas');
                                     }}
                                 >
                                     <Text 
@@ -123,6 +131,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewFadigaCansacoSinaisSintomas');
+                                    }}
                                 >
                                     <Text 
                                         style={{ 
@@ -143,6 +155,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         height: 50,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
+                                    }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewNauseaVomitoSinaisSintomas');
                                     }}
                                 >
                                     <Text 
@@ -165,6 +181,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewDisturbiosSonoSinaisSintomas');
+                                    }}
                                 >
                                     <Text 
                                         style={{ 
@@ -185,6 +205,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         height: 50,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
+                                    }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewDiarreiaSinaisSintomas');
                                     }}
                                 >
                                     <Text 
@@ -207,6 +231,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewConstipacaoSinaisSintomas');
+                                    }}
                                 >
                                     <Text 
                                         style={{ 
@@ -227,6 +255,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         height: 50,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
+                                    }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewDisturbiosPsicoemocionaisSinaisSintomas');
                                     }}
                                 >
                                     <Text 
@@ -249,6 +281,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewConvulsoesSinaisSintomas');
+                                    }}
                                 >
                                     <Text 
                                         style={{ 
@@ -269,6 +305,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         height: 50,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
+                                    }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewDisturbiosSensoriaisSinaisSintomas');
                                     }}
                                 >
                                     <Text 
@@ -291,6 +331,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewMucoseOralSinaisSintomas');
+                                    }}
                                 >
                                     <Text 
                                         style={{ 
@@ -311,6 +355,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         height: 50,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
+                                    }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewAnorexiaSinaisSintomas');
                                     }}
                                 >
                                     <Text 
@@ -333,6 +381,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewNeuropatiasSinaisSintomas');
+                                    }}
                                 >
                                     <Text 
                                         style={{ 
@@ -353,6 +405,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         height: 50,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
+                                    }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewSangramentosSinaisSintomas');
                                     }}
                                 >
                                     <Text 
@@ -375,6 +431,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewFaltaArSinaisSintomas');
+                                    }}
                                 >
                                     <Text 
                                         style={{ 
@@ -396,6 +456,10 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0',
                                         marginBottom: 20
+                                    }}
+                                    onPress={() => {
+                                        console.log("click action");
+                                        navigation.navigate('ViewAlopeciaSinaisSintomas');
                                     }}
                                 >
                                     <Text 
