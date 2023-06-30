@@ -1,14 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
-import { Text, View, ScrollView, Image, TouchableOpacity, Dimensions } from 'react-native';
+import { Text, View, ScrollView, Image, TouchableOpacity, Dimensions, Linking } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Spacer, Center, NativeBaseProvider, Button } from "native-base";
 import React, {useState, useEffect} from 'react';
 import ViewTerapias from '../terapias';
+import Navegacao from '../../features/navegacao/navegacao';
 
 let width = Dimensions.get('window').width
 let height = Dimensions.get('window').height
 
 export default function ViewInicio({ navigation }: any) {
+    Navegacao(1, 'ViewPrincipal');
+
     return (
         <NativeBaseProvider>
             <View style={{ flex:1, backgroundColor: 'transparent' }}>
@@ -73,6 +76,7 @@ export default function ViewInicio({ navigation }: any) {
                         <Center>
                             <TouchableOpacity                            
                                 activeOpacity={0.5}
+                                onPress={ ()=>{ Linking.openURL('https://youtu.be/wVmY3LSGzNI')}}
                             >  
                                 <Image               
                                     style={{
@@ -88,6 +92,7 @@ export default function ViewInicio({ navigation }: any) {
                             <TouchableOpacity                            
                                 activeOpacity={0.5}
                                 style={{marginBottom: 30}}
+                                onPress={ ()=>{ Linking.openURL('https://drive.google.com/drive/folders/1m8-OENwa9lzqee4Wu5n1gf23B2MJJEfD')}}
                             >  
                                 <Image               
                                     style={{

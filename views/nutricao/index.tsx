@@ -3,9 +3,10 @@ import { View, ScrollView, Image, Text, BackHandler } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Center, NativeBaseProvider, Button} from "native-base";
 import React, { useState, useEffect } from 'react';
+import Navegacao from '../../features/navegacao/navegacao';
 
 export default function ViewNutricao({ navigation }: any){
-
+    Navegacao(3, 'ViewNutricao');
     return (
         <NativeBaseProvider>
             <View style={{

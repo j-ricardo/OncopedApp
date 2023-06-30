@@ -41,6 +41,8 @@ import ViewNutricao from './views/nutricao';
 import ViewPassosNutricao from './views/nutricao/01_passos';
 import ViewMitosNutricao from './views/nutricao/02_mitos';
 import ViewSondasNutricao from './views/nutricao/03_sondas';
+import { Provider } from 'react-redux/es/exports';
+import { store } from './app/store/store';
 
 const Stack = createDrawerNavigator();
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
@@ -77,403 +79,406 @@ function CustomDrawerContent(props: any) {
 
 export default function App() {
   return (
-    <NativeBaseProvider config={config}>
-      <NavigationContainer>
-        <Stack.Navigator 
-          id="LeftDrawer"
-          useLegacyImplementation
-          initialRouteName="initialRoute"
-          backBehavior='order'
-          screenOptions={{   
-            headerTintColor: '#fff',            
-            drawerPosition: 'left',
-            drawerStyle: {height: '100%'},
-            headerTransparent: true,
-          }}                   
-          drawerContent={(props) => <CustomDrawerContent {...props} />}
-        >          
-          <Stack.Screen
-            name="TelaInicial"
-            component={TelaInicial}
-            options={{ 
-              headerShown: false, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }} 
-          />
-          <Stack.Screen
-            name="ViewInicio"
-            component={ViewInicio}
-            options={{
-              title: 'Início',
-              headerTitleStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewTerapias"
-            component={ViewTerapias}
-            options={{
-              title: 'Terapias'
-            }}
-          />
-          <Stack.Screen
-            name="ViewQuimioterapia"
-            component={ViewQuimioterapia}
-            options={{
-              title: 'Quimioterapia'
-            }}
-          />
-          <Stack.Screen
-            name="ViewOQueEhQuimioterapia"
-            component={ViewOQueEhQuimioterapia}
-            options={{
-              title: 'O que é quimioterapia?',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewComoEhFeitaQuimioterapia"
-            component={ViewComoEhFeitaQuimioterapia}
-            options={{
-              title: 'Como é feita?',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewOQueEsperarQuimioterapia"
-            component={ViewOQueEsperarQuimioterapia}
-            options={{
-              title: 'O que esperar?',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewRadioterapia"
-            component={ViewRadioterapia}
-            options={{
-              title: 'Radioterapia'
-            }}
-          />
-          <Stack.Screen
-            name="ViewOQueEhRadioterapia"
-            component={ViewOQueEhRadioterapia}
-            options={{
-              title: 'O que é radioterapia?',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewComoEhFeitaRadioterapia"
-            component={ViewComoEhFeitaRadioterapia}
-            options={{
-              title: 'Como é feita?',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewOQueEsperarRadioterapia"
-            component={ViewOQueEsperarRadioterapia}
-            options={{
-              title: 'O que esperar?',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewSinaisSintomas"
-            component={ViewSinaisSintomas}
-            options={{
-              title: 'Sinais e Sintomas'
-            }}
-          />
-          <Stack.Screen
-            name="ViewFebreSinaisSintomas"
-            component={ViewFebreSinaisSintomas}
-            options={{
-              title: 'Febre',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewDorSintomas"
-            component={ViewDorSintomas}
-            options={{
-              title: 'Dor',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewFadigaCansacoSinaisSintomas"
-            component={ViewFadigaCansacoSinaisSintomas}
-            options={{
-              title: 'Fadiga e cansaço',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewNauseaVomitoSinaisSintomas"
-            component={ViewNauseaVomitoSinaisSintomas}
-            options={{
-              title: 'Nausea e vômito',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewDisturbiosSonoSinaisSintomas"
-            component={ViewDisturbiosSonoSinaisSintomas}
-            options={{
-              title: 'Distúrbios do sono',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewDiarreiaSinaisSintomas"
-            component={ViewDiarreiaSinaisSintomas}
-            options={{
-              title: 'Diarréia',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewConstipacaoSinaisSintomas"
-            component={ViewConstipacaoSinaisSintomas}
-            options={{
-              title: 'Constipação',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewDisturbiosPsicoemocionaisSinaisSintomas"
-            component={ViewDisturbiosPsicoemocionaisSinaisSintomas}
-            options={{
-              title: 'Distúrbios psicoemocionais',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewConvulsoesSinaisSintomas"
-            component={ViewConvulsoesSinaisSintomas}
-            options={{
-              title: 'Convulsões',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewDisturbiosSensoriaisSinaisSintomas"
-            component={ViewDisturbiosSensoriaisSinaisSintomas}
-            options={{
-              title: 'Disturbios sensoriais',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewMucoseOralSinaisSintomas"
-            component={ViewMucoseOralSinaisSintomas}
-            options={{
-              title: 'Mucosite oral',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewAnorexiaSinaisSintomas"
-            component={ViewAnorexiaSinaisSintomas}
-            options={{
-              title: 'Anorexia',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewNeuropatiasSinaisSintomas"
-            component={ViewNeuropatiasSinaisSintomas}
-            options={{
-              title: 'Neuropatias',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewSangramentosSinaisSintomas"
-            component={ViewSangramentosSinaisSintomas}
-            options={{
-              title: 'Sangramentos',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewFaltaArSinaisSintomas"
-            component={ViewFaltaArSinaisSintomas}
-            options={{
-              title: 'Falta de ar',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewAlopeciaSinaisSintomas"
-            component={ViewAlopeciaSinaisSintomas}
-            options={{
-              title: 'Alopécia',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewNutricao"
-            component={ViewNutricao}
-            options={{
-              title: 'Nutrição'
-            }}
-          />
-          <Stack.Screen
-            name="ViewPassosNutricao"
-            component={ViewPassosNutricao}
-            options={{
-              title: 'Passos para uma alimentação saudável',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewMitosNutricao"
-            component={ViewMitosNutricao}
-            options={{
-              title: 'Os mitos da alimentação durante o tratamento do câncer',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-          <Stack.Screen
-            name="ViewSondasNutricao"
-            component={ViewSondasNutricao}
-            options={{
-              title: 'Sondas alimentares',
-              headerTitleStyle: {
-                display: 'none'
-              }, 
-              drawerItemStyle: {
-                display: 'none'
-              }
-            }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </NativeBaseProvider>
+    <Provider store={store}>
+      <NativeBaseProvider config={config}>
+        <NavigationContainer>
+          <Stack.Navigator 
+            id="LeftDrawer"
+            useLegacyImplementation
+            initialRouteName="initialRoute"
+            // backBehavior='order'
+            screenOptions={{   
+              headerTintColor: '#fff',            
+              drawerPosition: 'left',
+              drawerStyle: {height: '100%'},
+              headerTransparent: true,
+            }}                   
+            drawerContent={(props) => <CustomDrawerContent {...props} />}
+          >          
+            <Stack.Screen
+              name="TelaInicial"
+              component={TelaInicial}
+              options={{ 
+                headerShown: false, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }} 
+            />
+            <Stack.Screen
+              name="ViewInicio"
+              component={ViewInicio}
+              options={{
+                title: 'Início',
+                headerTitleStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewTerapias"
+              component={ViewTerapias}
+              options={{
+                title: 'Terapias'
+              }}
+            />
+            <Stack.Screen
+              name="ViewQuimioterapia"
+              component={ViewQuimioterapia}
+              options={{
+                title: 'Quimioterapia'
+              }}
+            />
+            <Stack.Screen
+              name="ViewOQueEhQuimioterapia"
+              component={ViewOQueEhQuimioterapia}
+              options={{
+                title: 'O que é quimioterapia?',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewComoEhFeitaQuimioterapia"
+              component={ViewComoEhFeitaQuimioterapia}
+              options={{
+                title: 'Como é feita?',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewOQueEsperarQuimioterapia"
+              component={ViewOQueEsperarQuimioterapia}
+              options={{
+                title: 'O que esperar?',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewRadioterapia"
+              component={ViewRadioterapia}
+              options={{
+                title: 'Radioterapia'
+              }}
+            />
+            <Stack.Screen
+              name="ViewOQueEhRadioterapia"
+              component={ViewOQueEhRadioterapia}
+              options={{
+                title: 'O que é radioterapia?',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewComoEhFeitaRadioterapia"
+              component={ViewComoEhFeitaRadioterapia}
+              options={{
+                title: 'Como é feita?',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewOQueEsperarRadioterapia"
+              component={ViewOQueEsperarRadioterapia}
+              options={{
+                title: 'O que esperar?',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewSinaisSintomas"
+              component={ViewSinaisSintomas}
+              options={{
+                title: 'Sinais e Sintomas'
+              }}
+            />
+            <Stack.Screen
+              name="ViewFebreSinaisSintomas"
+              component={ViewFebreSinaisSintomas}
+              options={{
+                title: 'Febre',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewDorSintomas"
+              component={ViewDorSintomas}
+              options={{
+                title: 'Dor',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewFadigaCansacoSinaisSintomas"
+              component={ViewFadigaCansacoSinaisSintomas}
+              options={{
+                title: 'Fadiga e cansaço',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewNauseaVomitoSinaisSintomas"
+              component={ViewNauseaVomitoSinaisSintomas}
+              options={{
+                title: 'Nausea e vômito',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewDisturbiosSonoSinaisSintomas"
+              component={ViewDisturbiosSonoSinaisSintomas}
+              options={{
+                title: 'Distúrbios do sono',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewDiarreiaSinaisSintomas"
+              component={ViewDiarreiaSinaisSintomas}
+              options={{
+                title: 'Diarréia',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewConstipacaoSinaisSintomas"
+              component={ViewConstipacaoSinaisSintomas}
+              options={{
+                title: 'Constipação',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewDisturbiosPsicoemocionaisSinaisSintomas"
+              component={ViewDisturbiosPsicoemocionaisSinaisSintomas}
+              options={{
+                title: 'Distúrbios psicoemocionais',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewConvulsoesSinaisSintomas"
+              component={ViewConvulsoesSinaisSintomas}
+              options={{
+                title: 'Convulsões',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewDisturbiosSensoriaisSinaisSintomas"
+              component={ViewDisturbiosSensoriaisSinaisSintomas}
+              options={{
+                title: 'Disturbios sensoriais',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewMucoseOralSinaisSintomas"
+              component={ViewMucoseOralSinaisSintomas}
+              options={{
+                title: 'Mucosite oral',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewAnorexiaSinaisSintomas"
+              component={ViewAnorexiaSinaisSintomas}
+              options={{
+                title: 'Anorexia',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewNeuropatiasSinaisSintomas"
+              component={ViewNeuropatiasSinaisSintomas}
+              options={{
+                title: 'Neuropatias',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewSangramentosSinaisSintomas"
+              component={ViewSangramentosSinaisSintomas}
+              options={{
+                title: 'Sangramentos',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewFaltaArSinaisSintomas"
+              component={ViewFaltaArSinaisSintomas}
+              options={{
+                title: 'Falta de ar',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewAlopeciaSinaisSintomas"
+              component={ViewAlopeciaSinaisSintomas}
+              options={{
+                title: 'Alopécia',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewNutricao"
+              component={ViewNutricao}
+              options={{
+                title: 'Nutrição'
+              }}
+            />
+            <Stack.Screen
+              name="ViewPassosNutricao"
+              component={ViewPassosNutricao}
+              options={{
+                title: 'Passos para uma alimentação saudável',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewMitosNutricao"
+              component={ViewMitosNutricao}
+              options={{
+                title: 'Os mitos da alimentação durante o tratamento do câncer',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+            <Stack.Screen
+              name="ViewSondasNutricao"
+              component={ViewSondasNutricao}
+              options={{
+                title: 'Sondas alimentares',
+                headerTitleStyle: {
+                  display: 'none'
+                }, 
+                drawerItemStyle: {
+                  display: 'none'
+                }
+              }}
+            />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </NativeBaseProvider>
+    </Provider>
+    
   );
 }

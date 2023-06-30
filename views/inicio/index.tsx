@@ -5,7 +5,7 @@ import React, {useState, useEffect} from 'react';
 import * as Font from 'expo-font';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-
+import Navegacao from '../../features/navegacao/navegacao';
 
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
 const config = {
@@ -16,7 +16,9 @@ const config = {
 
 export default function TelaInicial({ navigation }: any)  {
   const [loadingFont, setLoadingFont] = useState<boolean>(false);
+  Navegacao(0, 'ViewInicio');
   useEffect(()=>{
+    
     async function loadFonts(){
       await Font.loadAsync({
         'Montserrat': require("../../assets/fonts/Montserrat-Regular.ttf"),

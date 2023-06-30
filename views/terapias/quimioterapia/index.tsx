@@ -3,17 +3,11 @@ import { View, ScrollView, Image, Text, BackHandler } from 'react-native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
-import useBackButton from '../../../utils/navigation';
+import Navegacao from '../../../features/navegacao/navegacao';
 
 export default function ViewQuimioterapia({ navigation }: any){
-    const backAction = () => {
-        navigation.pop();
-        navigation.navigate('ViewInicio');        
-        return true;
-    };
-
-    //useBackButton(backAction);
-
+    Navegacao(4, 'ViewQuimioterapia');
+    
     return (
         <NativeBaseProvider>
             <View style={{

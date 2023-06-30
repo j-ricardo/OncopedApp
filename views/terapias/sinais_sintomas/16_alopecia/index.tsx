@@ -3,14 +3,15 @@ import { View, ScrollView, Image, Text, TouchableOpacity, BackHandler } from 're
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
-import useBackButton from '../../../../utils/navigation';
 import { Icon } from '@rneui/themed';
+import Navegacao from '../../../../features/navegacao/navegacao';
 
 export default function ViewAlopeciaSinaisSintomas({ navigation }: any){
     const [ newHeightView1, setNewHeightView1 ] = useState<number>(0);
     const [ newHeightView2, setNewHeightView2 ] = useState<number>(0);
     const [ newHeightView3, setNewHeightView3 ] = useState<number>(0);
     const [ newHeightView4, setNewHeightView4 ] = useState<number>(0); 
+    Navegacao(28, 'ViewAlopeciaSinaisSintomas'); 
 
     return (
         <NativeBaseProvider>

@@ -3,18 +3,13 @@ import { Text, View, ScrollView, Image, TouchableOpacity, Dimensions, BackHandle
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Spacer, Center, NativeBaseProvider, Button } from "native-base";
 import React, {useState, useEffect} from 'react';
-import useBackButton from '../../utils/navigation';
+import Navegacao from '../../features/navegacao/navegacao';
 
 let width = Dimensions.get('window').width
 let height = Dimensions.get('window').height
 
 export default function ViewTerapias({ navigation }: any){
-    const backAction = () => {
-        navigation.pop();
-        navigation.navigate('ViewInicio');
-        return true;
-    };
-    //useBackButton(backAction);
+    Navegacao(2, 'ViewTerapias');
 
     return (
         <NativeBaseProvider>
