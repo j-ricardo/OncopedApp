@@ -37,6 +37,10 @@ import ViewNeuropatiasSinaisSintomas from './views/terapias/sinais_sintomas/13_n
 import ViewSangramentosSinaisSintomas from './views/terapias/sinais_sintomas/14_sangramentos';
 import ViewFaltaArSinaisSintomas from './views/terapias/sinais_sintomas/15_falta_ar';
 import ViewAlopeciaSinaisSintomas from './views/terapias/sinais_sintomas/16_alopecia';
+import ViewNutricao from './views/nutricao';
+import ViewPassosNutricao from './views/nutricao/01_passos';
+import ViewMitosNutricao from './views/nutricao/02_mitos';
+import ViewSondasNutricao from './views/nutricao/03_sondas';
 
 const Stack = createDrawerNavigator();
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
@@ -414,6 +418,52 @@ export default function App() {
             component={ViewAlopeciaSinaisSintomas}
             options={{
               title: 'Alopécia',
+              headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
+                display: 'none'
+              }
+            }}
+          />
+          <Stack.Screen
+            name="ViewNutricao"
+            component={ViewNutricao}
+            options={{
+              title: 'Nutrição'
+            }}
+          />
+          <Stack.Screen
+            name="ViewPassosNutricao"
+            component={ViewPassosNutricao}
+            options={{
+              title: 'Passos para uma alimentação saudável',
+              headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
+                display: 'none'
+              }
+            }}
+          />
+          <Stack.Screen
+            name="ViewMitosNutricao"
+            component={ViewMitosNutricao}
+            options={{
+              title: 'Os mitos da alimentação durante o tratamento do câncer',
+              headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
+                display: 'none'
+              }
+            }}
+          />
+          <Stack.Screen
+            name="ViewSondasNutricao"
+            component={ViewSondasNutricao}
+            options={{
+              title: 'Sondas alimentares',
               headerTitleStyle: {
                 display: 'none'
               }, 

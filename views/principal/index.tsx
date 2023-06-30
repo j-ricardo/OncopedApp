@@ -55,6 +55,10 @@ export default function ViewInicio({ navigation }: any) {
                         <Center>
                             <TouchableOpacity                            
                                 activeOpacity={0.5}
+                                onPress={() => {
+                                    console.log("click action");
+                                    navigation.navigate('ViewNutricao');
+                                }}
                             >  
                                 <Image               
                                     style={{
