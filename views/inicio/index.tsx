@@ -16,9 +16,10 @@ const config = {
 
 export default function TelaInicial({ navigation }: any)  {
   const [loadingFont, setLoadingFont] = useState<boolean>(false);
+  
   Navegacao(0, 'ViewInicio');
-  useEffect(()=>{
-    
+
+  useEffect(()=>{    
     async function loadFonts(){
       await Font.loadAsync({
         'Montserrat': require("../../assets/fonts/Montserrat-Regular.ttf"),

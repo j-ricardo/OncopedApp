@@ -16,7 +16,8 @@ export const paginaSlice = createSlice({
   initialState,
   reducers: {
     alterarPagina: (state, action: PayloadAction<PaginaAtual>) => {
-      state = action.payload;
+      state.id = action.payload.id;
+      state.nome = action.payload.nome;
     },
   },
 });

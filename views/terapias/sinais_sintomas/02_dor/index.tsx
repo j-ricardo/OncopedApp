@@ -3,7 +3,7 @@ import { View, ScrollView, Image, Text, TouchableOpacity, BackHandler } from 're
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
-import useBackButton from '../../../../features/backhandler/backhandler';
+import { useBackButton, ViewReturnedInBackPress } from '../../../../features/backpress/backpress';
 import { Icon } from '@rneui/themed';
 import Navegacao from '../../../../features/navegacao/navegacao';
 
@@ -11,8 +11,19 @@ export default function ViewDorSintomas({ navigation }: any){
     const [ newHeightView1, setNewHeightView1 ] = useState<number>(0);
     const [ newHeightView2, setNewHeightView2 ] = useState<number>(0);
     const [ newHeightView3, setNewHeightView3 ] = useState<number>(0);
-    const [ newHeightView4, setNewHeightView4 ] = useState<number>(0); 
+
     Navegacao(14, 'ViewDorSintomas');
+    
+    useBackButton(handler);   
+
+    function handler(){
+        console.log('backpress');
+        const nav: string = ViewReturnedInBackPress(14);
+        console.log('retornar para view', nav);
+        navigation.navigate(nav);
+        return true; 
+    }
+
     return (
         <NativeBaseProvider>
             <View

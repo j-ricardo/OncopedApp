@@ -5,13 +5,24 @@ import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 import { Icon } from '@rneui/themed';
 import Navegacao from '../../../../features/navegacao/navegacao';
+import { useBackButton, ViewReturnedInBackPress } from '../../../../features/backpress/backpress';
 
 export default function ViewSangramentosSinaisSintomas({ navigation }: any){
     const [ newHeightView1, setNewHeightView1 ] = useState<number>(0);
     const [ newHeightView2, setNewHeightView2 ] = useState<number>(0);
     const [ newHeightView3, setNewHeightView3 ] = useState<number>(0);
-    const [ newHeightView4, setNewHeightView4 ] = useState<number>(0); 
+
     Navegacao(26, 'ViewSangramentosSinaisSintomas'); 
+
+    useBackButton(handler);   
+
+    function handler(){
+        console.log('backpress');
+        const nav: string = ViewReturnedInBackPress(26);
+        console.log('retornar para view', nav);
+        navigation.navigate(nav);
+        return true; 
+    }
 
     return (
         <NativeBaseProvider>
