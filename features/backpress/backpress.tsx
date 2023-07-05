@@ -8,15 +8,15 @@ import { PaginaAtual, alterarPagina, paginaSelector } from "../pagina_atual/pagi
 //import { navigationRef } from '../../Index';
 
 export function useBackButton(handler: any) {    
-    const dispatch = useAppDispatch();
-    const viewSel = useAppSelector(paginaSelector);
-    const [ navegacao, setNavegacao ] = useState<PaginaAtual>();
+    // const dispatch = useAppDispatch();
+    // const viewSel = useAppSelector(paginaSelector);
+    // const [ navegacao, setNavegacao ] = useState<PaginaAtual>();
 
-    useEffect(() => {
-      setNavegacao(viewSel);
-      console.log('useeffect', viewSel.id, viewSel.nome)
+    // useEffect(() => {
+    //   setNavegacao(viewSel);
+    //   console.log('useeffect', viewSel.id, viewSel.nome)
 
-    }, [viewSel])
+    // }, [viewSel])
 
     useEffect(() => {
       BackHandler.addEventListener("hardwareBackPress", handler);
@@ -28,7 +28,7 @@ export function useBackButton(handler: any) {
         );
       };
 
-    }, [handler]);
+    }, [/*handler*/]);
 }
 
 export function ViewReturnedInBackPress(id: number): string{

@@ -21,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#ffa9a9"
-      }
+      },
+      "package": "com.ufcg.oncopedapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ed6ab49e-13c8-476d-ba5f-601e39776930"
+      }
     }
   }
 }

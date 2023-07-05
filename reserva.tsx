@@ -114,7 +114,7 @@ export default function App() {
     
     const backAction = () => {
       if (viewSel !== undefined){
-        const nav: string = ViewReturnedInBackPress(viewSel.id);
+        const navView: string = ViewReturnedInBackPress(viewSel.id);
         navigate(nav);
         return true;
       }      

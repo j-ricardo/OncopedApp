@@ -5,6 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { NavigationContainer, createNavigationContainerRef, CommonActions, useFocusEffect } from '@react-navigation/native';
 import { 
   createDrawerNavigator,
+  DrawerContent,
   DrawerContentScrollView,
   DrawerItemList,
   DrawerItem
@@ -42,6 +43,7 @@ import ViewPassosNutricao from './views/nutricao/01_passos';
 import ViewMitosNutricao from './views/nutricao/02_mitos';
 import ViewSondasNutricao from './views/nutricao/03_sondas';
 import { Icon } from '@rneui/themed';
+import { useNavigation } from '@react-navigation/native';
 
 export const navigationRef = createNavigationContainerRef();
 
@@ -54,6 +56,7 @@ const config = {
 };
 
 function CustomDrawerContent(props: any) {
+  const navigation = useNavigation<any>();
   const [ expandirBotaoTerapias, setExpandirBotaoTerapias ] = useState<boolean>(false);
   const [ expandirBotaoNutricao, setExpandirBotaoNutricao ] = useState<boolean>(false);
 
@@ -90,6 +93,9 @@ function CustomDrawerContent(props: any) {
          <TouchableOpacity                            
             activeOpacity={0.5}
             style={styles.touchStyle}
+            onPress={() => {
+              navigation.navigate('ViewInicio');
+            }}
           >
             <Image style={styles.imgStyled} source={require('./assets/ico_nav_inicio.png')}/> 
             <Text style={styles.textStyle}>
@@ -98,31 +104,83 @@ function CustomDrawerContent(props: any) {
           </TouchableOpacity>        
       </View>
       <View style={styles.viewStyle}>
-         <TouchableOpacity                            
+        <TouchableOpacity                            
+          activeOpacity={0.5}
+          style={styles.touchStyle}
+          onPress={() => {
+            navigation.navigate('ViewTerapias');
+          }}
+        >
+          <Image style={styles.imgStyled} source={require('./assets/ico_nav_terapias.png')}/> 
+          <Text style={styles.textStyle}>
+            Terapias
+          </Text>
+        </TouchableOpacity>  
+        <Text 
+          style={styles.icoStyle}
+          onPress={btnExpandirBotaoTerapias}
+        >
+          <Icon
+            size={25}
+            name={(expandirBotaoTerapias? 'arrow-up' : 'arrow-down')}
+            type='simple-line-icon'
+            color='#fea9a7'
+          />    
+        </Text>
+      </View>
+      <View style={{
+        display: (expandirBotaoTerapias? 'flex' : 'none')
+      }}>
+        <View style={styles.viewSubStyle}>
+          <TouchableOpacity                            
             activeOpacity={0.5}
             style={styles.touchStyle}
+            onPress={() => {
+              navigation.navigate('ViewQuimioterapia');
+            }}
           >
-            <Image style={styles.imgStyled} source={require('./assets/ico_nav_terapias.png')}/> 
+            <Image style={styles.imgStyled} source={require('./assets/ico_nav_quimeo.png')}/> 
             <Text style={styles.textStyle}>
-              Terapias
+              Quimioterapia
             </Text>
-          </TouchableOpacity>  
-          <Text 
-            style={styles.icoStyle}
-            onPress={btnExpandirBotaoTerapias}
+          </TouchableOpacity>
+        </View>
+        <View style={styles.viewSubStyle}>
+          <TouchableOpacity                            
+            activeOpacity={0.5}
+            style={styles.touchStyle}
+            onPress={() => {
+              navigation.navigate('ViewRadioterapia');
+            }}
           >
-            <Icon
-              size={25}
-              name={(expandirBotaoTerapias? 'arrow-up' : 'arrow-down')}
-              type='simple-line-icon'
-              color='#fea9a7'
-            />    
-          </Text>
+            <Image style={styles.imgStyled} source={require('./assets/ico_nav_radio.png')}/> 
+            <Text style={styles.textStyle}>
+              Radioterapia
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.viewSubStyle}>
+          <TouchableOpacity                            
+            activeOpacity={0.5}
+            style={styles.touchStyle}
+            onPress={() => {
+              navigation.navigate('ViewSinaisSintomas');
+            }}
+          >
+            <Image style={styles.imgStyled} source={require('./assets/ico_nav_sinais_sintomas.png')}/> 
+            <Text style={styles.textStyle}>
+              Sinais e sintomas
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
       <View style={styles.viewStyle}>
          <TouchableOpacity                            
             activeOpacity={0.5}
             style={styles.touchStyle}
+            onPress={() => {
+              navigation.navigate('ViewNutricao');
+            }}
           >
             <Image style={styles.imgStyled} source={require('./assets/ico_nav_nutricao.png')}/> 
             <Text style={styles.textStyle}>
@@ -141,6 +199,53 @@ function CustomDrawerContent(props: any) {
             />    
           </Text>      
       </View>
+      <View style={{
+        display: (expandirBotaoNutricao? 'flex' : 'none')
+      }}>
+        <View style={styles.viewSubStyle}>
+          <TouchableOpacity                            
+            activeOpacity={0.5}
+            style={styles.touchStyle}
+            onPress={() => {
+              navigation.navigate('ViewPassosNutricao');
+            }}
+          >
+            <Image style={styles.imgStyled} source={require('./assets/ico_nav_passos.png')}/> 
+            <Text style={styles.textStyle}>
+              Passos para uma{"\n"}
+              alimentação saudável
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.viewSubStyle}>
+          <TouchableOpacity                            
+            activeOpacity={0.5}
+            style={styles.touchStyle}
+            onPress={() => {
+              navigation.navigate('ViewMitosNutricao');
+            }}
+          >
+            <Image style={styles.imgStyled} source={require('./assets/ico_nav_mitos_alimentacao.png')}/> 
+            <Text style={styles.textStyle}>
+              Os mitos da alimentação durante o tratamento do câncer
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.viewSubStyle}>
+          <TouchableOpacity                            
+            activeOpacity={0.5}
+            style={styles.touchStyle}
+            onPress={() => {
+              navigation.navigate('ViewSondasNutricao');
+            }}
+          >
+            <Image style={styles.imgStyled} source={require('./assets/ico_nav_sondas_alimentares.png')}/> 
+            <Text style={styles.textStyle}>
+              Sondas alimentares
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
   );
@@ -158,6 +263,17 @@ const styles = StyleSheet.create({
     display: 'flex', 
     flexDirection: 'row'
   },
+  viewSubStyle: {
+    width: '100%',
+    backgroundColor: '#96b9e0',
+    paddingHorizontal: 15,
+    paddingTop: 15,
+    paddingBottom: 15,
+    borderBottomWidth: 1,
+    borderBottomColor: '#fff',
+    display: 'flex', 
+    flexDirection: 'row'
+  },
   touchStyle: {
     display: 'flex', 
     flexDirection: 'row'
@@ -165,11 +281,14 @@ const styles = StyleSheet.create({
   imgStyled: {
     width: 40,
     height: 40,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
+    marginTop: 'auto',
+    marginBottom: 'auto'
   },
   textStyle: {
     marginLeft: 20,
     height: '100%',
+    width: 195,
     fontSize: 19, 
     fontWeight: '900',
     color: '#5e718b',
@@ -183,7 +302,7 @@ const styles = StyleSheet.create({
 
 });
 
-export default function Index() {
+export default function Main() {
   return (
     <NativeBaseProvider config={config}>
       <NavigationContainer ref={navigationRef}>
@@ -191,13 +310,14 @@ export default function Index() {
           id="LeftDrawer"
           useLegacyImplementation
           initialRouteName="initialRoute"
-          // backBehavior='order'
+          detachInactiveScreens={true}
+          backBehavior='order'
           screenOptions={{   
             headerTintColor: '#fff',            
             drawerPosition: 'left',
             drawerStyle: {height: '100%'},
             headerTransparent: true,
-          }}                   
+          }}          
           drawerContent={(props) => <CustomDrawerContent {...props} />}
         >          
           <Stack.Screen
