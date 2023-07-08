@@ -171,27 +171,8 @@ export default function ViewFebreSinaisSintomas({ navigation }: any){
                                                 textAlign: 'center'
                                             }}
                                         >
-                                            É a elevação da
-                                        </Text>
-                                        <Text 
-                                            style={{ 
-                                                color: '#5e718b',
-                                                fontSize: 18, 
-                                                fontWeight: '900', 
-                                                textAlign: 'center'
-                                            }}
-                                        >
-                                            temperatura do corpo a
-                                        </Text>
-                                        <Text 
-                                            style={{ 
-                                                color: '#5e718b',
-                                                fontSize: 18, 
-                                                fontWeight: '900', 
-                                                textAlign: 'center'
-                                            }}
-                                        >
-                                            partir dos 37,5 ºC;
+                                            É a elevação da temperatura 
+                                            do corpo a partir dos 37,8 ºC;
                                         </Text>
                                     </View>
                                 </View> 
@@ -296,7 +277,7 @@ export default function ViewFebreSinaisSintomas({ navigation }: any){
                                     <Button
                                         style={{
                                             width: '60%',
-                                            height: 50,
+                                            paddingVertical: 15,
                                             borderRadius: 70,
                                             backgroundColor: '#96b9e0'
                                         }}
@@ -306,9 +287,10 @@ export default function ViewFebreSinaisSintomas({ navigation }: any){
                                                 fontSize: 19, 
                                                 fontWeight: '900',
                                                 color: '#5e718b',
+                                                textAlign: 'center'
                                             }}
                                         >
-                                            Como tratar e aliviar:
+                                            Como tratar {"\n"}e aliviar:
                                         </Text>  
                                     </Button>
                                 </View>
@@ -316,7 +298,7 @@ export default function ViewFebreSinaisSintomas({ navigation }: any){
                                     style={{
                                         backgroundColor: '#edeff3',
                                         zIndex: 3,
-                                        marginTop: 25,
+                                        marginTop: 35,
                                         position: 'absolute',
                                         borderRadius: 30,
                                         width: '90%',

@@ -1,7 +1,7 @@
 id/nome
-0 ViewInicio
+0 TelaInicial
 --------------------
-1 ViewPrincipal  ----RETORNA 0
+1 ViewInicio  ----RETORNA 0
 --------------------
 2 ViewTerapias     ---RETORNA 1
 3 ViewNutricao     

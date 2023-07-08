@@ -71,8 +71,8 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
                                         borderRadius: 70,
+                                        paddingVertical: 15,
                                         backgroundColor: '#96b9e0'
                                     }}
                                     onPress={() => {
@@ -96,7 +96,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -121,7 +121,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -146,7 +146,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -171,7 +171,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -196,7 +196,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -221,7 +221,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -246,7 +246,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -271,7 +271,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -296,7 +296,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -321,7 +321,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -346,7 +346,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -371,7 +371,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -396,7 +396,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -421,7 +421,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0'
                                     }}
@@ -446,7 +446,7 @@ export default function ViewSinaisSintomas({ navigation }: any){
                                 <Button
                                     style={{
                                         width: '70%',
-                                        height: 50,
+                                        paddingVertical: 15,
                                         borderRadius: 70,
                                         backgroundColor: '#96b9e0',
                                         marginBottom: 20

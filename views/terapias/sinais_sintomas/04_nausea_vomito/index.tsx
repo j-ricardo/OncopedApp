@@ -276,7 +276,7 @@ export default function ViewNauseaVomitoSinaisSintomas({ navigation }: any){
                                     <Button
                                         style={{
                                             width: '60%',
-                                            height: 50,
+                                            paddingVertical: 15,
                                             borderRadius: 70,
                                             backgroundColor: '#96b9e0'
                                         }}
@@ -286,9 +286,10 @@ export default function ViewNauseaVomitoSinaisSintomas({ navigation }: any){
                                                 fontSize: 19, 
                                                 fontWeight: '900',
                                                 color: '#5e718b',
+                                                textAlign: 'center'
                                             }}
                                         >
-                                            Como tratar e aliviar:
+                                            Como tratar {"\n"}e aliviar:
                                         </Text>  
                                     </Button>
                                 </View>
@@ -296,7 +297,7 @@ export default function ViewNauseaVomitoSinaisSintomas({ navigation }: any){
                                     style={{
                                         backgroundColor: '#edeff3',
                                         zIndex: 3,
-                                        marginTop: 25,
+                                        marginTop: 35,
                                         position: 'absolute',
                                         borderRadius: 30,
                                         width: '90%',
@@ -399,11 +400,11 @@ export default function ViewNauseaVomitoSinaisSintomas({ navigation }: any){
                                             Evitar alimentos que o paciente
                                             mais gosta nos episódios mais
                                             intensos para não gerar aversão,
-                                            frituras, alimentos muito quentes,
+                                            assim como frituras, alimentos muito quentes,
                                             gordurosos, picantes e muito
                                             doces ou com cheiro muito forte;
                                             ingerir chás e infusões à base de
-                                            gengibre e alimentos gelados; 
+                                            gengibre e alimentos gelados;
                                         </Text>
                                         <Text 
                                             style={{ 
@@ -440,7 +441,7 @@ export default function ViewNauseaVomitoSinaisSintomas({ navigation }: any){
                                             }}
                                         >
                                             Antieméticos antes da
-                                            quimioterapia ou de horário de de
+                                            quimioterapia ou de horário de
                                             acordo com orientação médica.
                                         </Text>
                                         

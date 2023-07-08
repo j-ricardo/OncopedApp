@@ -47,6 +47,8 @@ import { useNavigation } from '@react-navigation/native';
 import { ViewReturnedInBackPress } from './features/backpress/returnedback';
 import { useAppDispatch, useAppSelector } from './app/hooks/hooks';
 import { PaginaAtual, alterarPagina, paginaSelector } from "./features/pagina_atual/paginaAtualSlice";
+import { useBackHandler } from '@react-native-community/hooks'
+export const navigationRef = createNavigationContainerRef();
 
 const Stack = createDrawerNavigator();
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
@@ -303,49 +305,41 @@ const styles = StyleSheet.create({
 
 });
 
-function useBackButton(handler: any) {
-  useEffect(() => {
-    BackHandler.addEventListener("hardwareBackPress", handler);
+export default function Main() {
+  const dispatch = useAppDispatch();    
+  const viewSel = useAppSelector(paginaSelector);
+  const [ ready, setReady ] = useState<boolean>(false);
 
-    return () => {
-      BackHandler.removeEventListener(
-        "hardwareBackPress",
-        handler
-      );
-    };
-
-  }, [handler]);
-}
-
-export default function Main() { 
-  const handlerBack = () => {
-    const viewSel = useAppSelector(paginaSelector);
-    const nav = ViewReturnedInBackPress(viewSel!.id);
-    console.log(nav);  
-    return true;
-  }
-
-  useEffect(() => {
-    BackHandler.addEventListener("hardwareBackPress", handlerBack);
-
-    return () => {
-      BackHandler.removeEventListener(
-        "hardwareBackPress",
-        handlerBack
-      );
-    };
-  }, [handlerBack]);
+  useBackHandler(() => {
+    if(ready){
+      const nav = ViewReturnedInBackPress(viewSel!.id);
+      if(nav.id > -1){
+        console.log('back press', nav);
+        dispatch(alterarPagina(nav));
+        navigationRef.navigate(nav.nome as never);
+        return true
+      } else {        
+        BackHandler.exitApp();    
+        return true;
+      }  
+    } else return false;
+  })
 
   return (
     <NativeBaseProvider config={config}>
-      <NavigationContainer>
+      <NavigationContainer 
+        ref={navigationRef}
+        onReady={() => {
+          setReady(true)
+        }}
+      >
         <Stack.Navigator 
           id="LeftDrawer"
           useLegacyImplementation
           initialRouteName="initialRoute"
-          backBehavior='order'
+          backBehavior='none'
           detachInactiveScreens={true}
-          screenOptions={{   
+          screenOptions={{
             headerTintColor: '#fff',            
             drawerPosition: 'left',
             drawerStyle: {height: '100%'},

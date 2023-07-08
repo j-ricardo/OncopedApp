@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "OncopedApp",
+    "name": "Oncoped",
     "slug": "OncopedApp",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -20,9 +20,11 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/icon.png",
-        "backgroundColor": "#ffa9a9"
+        "backgroundColor": "#fff"
       },
-      "package": "com.ufcg.oncopedapp"
+      "package": "com.ufcg.oncopedapp",
+      "enableProguardInReleaseBuilds": true,
+      "versionCode": 2
     },
     "web": {
       "favicon": "./assets/favicon.png"

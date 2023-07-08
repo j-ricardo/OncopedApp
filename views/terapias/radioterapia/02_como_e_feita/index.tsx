@@ -155,9 +155,8 @@ export default function ViewComoEhFeitaRadioterapia({ navigation }: any){
                                             ao local a ser tratado,
                                             com o paciente deitado.
                                             As aplicações são,
-                                            geralmente, diárias, em
-                                            alguns casos necessita
-                                            de internação. 
+                                            geralmente, diárias e as
+                                            seções são rápidas.
                                         </Text>
                                     </View>
                                 </View> 

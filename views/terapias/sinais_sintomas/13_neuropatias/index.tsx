@@ -172,8 +172,9 @@ export default function ViewNeuropatiasSinaisSintomas({ navigation }: any){
                                             }}
                                         >
                                             Desconforto e mudanças que
-                                            afetam os nervos das regiões
-                                            periféricas (braços e pernas);
+                                            afetam os nervos dos braços
+                                            e pernas, que causa sensação
+                                            de dormência ou formigamento.
                                         </Text>                                        
                                     </View>
                                 </View> 
@@ -275,7 +276,7 @@ export default function ViewNeuropatiasSinaisSintomas({ navigation }: any){
                                     <Button
                                         style={{
                                             width: '60%',
-                                            height: 50,
+                                            paddingVertical: 15,
                                             borderRadius: 70,
                                             backgroundColor: '#96b9e0'
                                         }}
@@ -285,9 +286,10 @@ export default function ViewNeuropatiasSinaisSintomas({ navigation }: any){
                                                 fontSize: 19, 
                                                 fontWeight: '900',
                                                 color: '#5e718b',
+                                                textAlign: 'center'
                                             }}
                                         >
-                                            Como tratar e aliviar:
+                                            Como tratar {"\n"}e aliviar:
                                         </Text>  
                                     </Button>
                                 </View>
@@ -295,7 +297,7 @@ export default function ViewNeuropatiasSinaisSintomas({ navigation }: any){
                                     style={{
                                         backgroundColor: '#edeff3',
                                         zIndex: 3,
-                                        marginTop: 25,
+                                        marginTop: 35,
                                         position: 'absolute',
                                         borderRadius: 30,
                                         width: '90%',

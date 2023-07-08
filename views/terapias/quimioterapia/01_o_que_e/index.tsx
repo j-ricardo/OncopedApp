@@ -128,7 +128,8 @@ export default function ViewOQueEhQuimioterapia({ navigation }: any){
                                 que se espalhem pelo corpo.
                                 Os quimioterápicos atuam sem
                                 distinção, e atingem também
-                                as células normais.
+                                as células normais, que pode 
+                                causar efeitos colaterais.
                             </Text>
                         </View>
                     </View> 

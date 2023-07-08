@@ -6,16 +6,15 @@ import React, {useState, useEffect} from 'react';
 import ViewTerapias from '../terapias';
 import Navegacao from '../../features/navegacao/navegacao';
 
-
 let width = Dimensions.get('window').width
 let height = Dimensions.get('window').height
 
 export default function ViewInicio({ navigation }: any) {
-    Navegacao(1, 'ViewPrincipal');
+    Navegacao(1, 'ViewInicio');
 
     return (
         <NativeBaseProvider>
-            <View style={{ flex:1, backgroundColor: 'transparent' }}>
+            <View style={{ flex:1, backgroundColor: 'transparent', height: '100%' }}>
                 <View>
                     <Image 
                         source={require('../../assets/fundo_azul.png')} 
