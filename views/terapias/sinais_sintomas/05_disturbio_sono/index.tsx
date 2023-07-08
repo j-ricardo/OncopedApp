@@ -5,7 +5,6 @@ import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 import { Icon } from '@rneui/themed';
 import Navegacao from '../../../../features/navegacao/navegacao';
-import { useBackButton, ViewReturnedInBackPress } from '../../../../features/backpress/backpress';
 
 export default function ViewDisturbiosSonoSinaisSintomas({ navigation }: any){
     const [ newHeightView1, setNewHeightView1 ] = useState<number>(0);
@@ -14,15 +13,6 @@ export default function ViewDisturbiosSonoSinaisSintomas({ navigation }: any){
     const [ newHeightView4, setNewHeightView4 ] = useState<number>(0); 
     
     Navegacao(17, 'ViewDisturbiosSonoSinaisSintomas');
-    useBackButton(handler);   
-
-    function handler(){
-        console.log('backpress');
-        const nav: string = ViewReturnedInBackPress(17);
-        console.log('retornar para view', nav);
-        navigation.navigate(nav);
-        return true; 
-    }
 
     return (
         <NativeBaseProvider>
@@ -159,7 +149,7 @@ export default function ViewDisturbiosSonoSinaisSintomas({ navigation }: any){
                                     onLayout={({ nativeEvent }) => {
                                         //if(newHeightView1 === 0){
                                             const { x, y, width, height } = nativeEvent.layout;
-                                            console.log('view1', height);
+                                            //console.log('view1', height);
                                             setNewHeightView1(height);
                                         //}                                        
                                     }}
@@ -320,7 +310,7 @@ export default function ViewDisturbiosSonoSinaisSintomas({ navigation }: any){
                                     onLayout={({ nativeEvent }) => {
                                         //if(newHeightView3 === 0){
                                             const { x, y, width, height } = nativeEvent.layout;
-                                            console.log('view3', height);
+                                            //console.log('view3', height);
                                             setNewHeightView3(height);
                                         //}                                        
                                     }}

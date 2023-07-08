@@ -5,22 +5,13 @@ import { VStack, Spacer, Center, NativeBaseProvider, Button } from "native-base"
 import React, {useState, useEffect} from 'react';
 import ViewTerapias from '../terapias';
 import Navegacao from '../../features/navegacao/navegacao';
-import { useBackButton, ViewReturnedInBackPress } from '../../features/backpress/backpress';
+
 
 let width = Dimensions.get('window').width
 let height = Dimensions.get('window').height
 
 export default function ViewInicio({ navigation }: any) {
     Navegacao(1, 'ViewPrincipal');
-    useBackButton(handler);   
-
-    function handler(){
-        console.log('backpress');
-        const nav: string = ViewReturnedInBackPress(1);
-        console.log('retornar para view', nav);
-        navigation.navigate(nav);
-        return true; 
-    }
 
     return (
         <NativeBaseProvider>

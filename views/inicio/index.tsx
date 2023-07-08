@@ -17,7 +17,7 @@ const config = {
 export default function TelaInicial({ navigation }: any)  {
   const [loadingFont, setLoadingFont] = useState<boolean>(false);
   
-  Navegacao(0, 'ViewInicio');
+  Navegacao(0, 'TelaInicial');
 
   useEffect(()=>{    
     async function loadFonts(){

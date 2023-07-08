@@ -5,22 +5,11 @@ import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 import { Icon } from '@rneui/themed';
 import Navegacao from '../../../features/navegacao/navegacao';
-import { useBackButton, ViewReturnedInBackPress } from '../../../features/backpress/backpress';
 
 export default function ViewSondasNutricao({ navigation }: any){
     const [ newHeightView1, setNewHeightView1 ] = useState<number>(0);
     const [ newHeightView2, setNewHeightView2 ] = useState<number>(0);
     Navegacao(31, 'ViewSondasNutricao'); 
-    useBackButton(handler);   
-
-    function handler(){
-        console.log('backpress');
-        const nav: string = ViewReturnedInBackPress(31);
-        console.log('retornar para view', nav);
-        navigation.navigate(nav);
-        return true; 
-    }
-
     return (
         <NativeBaseProvider>
             <View
@@ -91,7 +80,7 @@ export default function ViewSondasNutricao({ navigation }: any){
                                         textAlign: 'center'
                                     }}
                                 >
-                                    Sondas{"\n"}
+                                    Sondas 
                                     alimentares
                                 </Text> 
                             </Button>
@@ -155,7 +144,7 @@ export default function ViewSondasNutricao({ navigation }: any){
                                     }}
                                     onLayout={({ nativeEvent }) => {
                                         const { x, y, width, height } = nativeEvent.layout;
-                                        console.log('view1', height);
+                                        //console.log('view1', height);
                                         setNewHeightView1(height);                                       
                                     }}
                                 >
@@ -177,14 +166,14 @@ export default function ViewSondasNutricao({ navigation }: any){
                                                 textAlign: 'center'
                                             }}
                                         >
-                                            É um tubo usado para{"\n"}
-                                            alimentar e introduzir os{"\n"}
-                                            medicamentos necessários{"\n"}
-                                            ao tratamento, pelo nariz,{"\n"}
-                                            descendo até o estômago ou{"\n"}
-                                            intestino. É necessária, por{"\n"}
-                                            um determinado período,{"\n"}
-                                            quando há dificuldades para{"\n"}
+                                            É um tubo usado para 
+                                            alimentar e introduzir os 
+                                            medicamentos necessários 
+                                            ao tratamento, pelo nariz, 
+                                            descendo até o estômago ou 
+                                            intestino. É necessária, por 
+                                            um determinado período, 
+                                            quando há dificuldades para 
                                             engolir ou digerir o alimento.
                                         </Text>
                                     </View>
@@ -238,7 +227,7 @@ export default function ViewSondasNutricao({ navigation }: any){
                                     }}
                                     onLayout={({ nativeEvent }) => {
                                         const { x, y, width, height } = nativeEvent.layout;
-                                        console.log('view2', height);
+                                        //console.log('view2', height);
                                         setNewHeightView2(height);                                       
                                     }}
                                 >
@@ -268,14 +257,14 @@ export default function ViewSondasNutricao({ navigation }: any){
                                                 color='#5e718b'
                                             /> 
                                             <Text>
-                                                {" "}O paciente e seus{"\n"}
-                                                familiares devem receber{"\n"}
-                                                instruções da equipe de{"\n"}
-                                                Enfermagem sobre como{"\n"}
-                                                usar a sonda e indicar o{"\n"}
-                                                material para introdução dos{"\n"}
-                                                alimentos, que devem ser{"\n"}
-                                                lavados com água e sabão{"\n"}
+                                                {" "}O paciente e seus 
+                                                familiares devem receber 
+                                                instruções da equipe de 
+                                                Enfermagem sobre como 
+                                                usar a sonda e indicar o 
+                                                material para introdução dos 
+                                                alimentos, que devem ser 
+                                                lavados com água e sabão 
                                                 antes e após seu uso;
                                             </Text>
                                         </Text>
@@ -294,11 +283,11 @@ export default function ViewSondasNutricao({ navigation }: any){
                                                 color='#5e718b'
                                             /> 
                                             <Text>
-                                                {" "}Em caso de entupimento{"\n"}
-                                                por alimentos ou remédios e{"\n"}
-                                                a saída acidental pelo nariz,{"\n"}
-                                                é necessário buscar a equipe{"\n"}
-                                                especializada no hospital de{"\n"}
+                                                {" "}Em caso de entupimento 
+                                                por alimentos ou remédios e 
+                                                a saída acidental pelo nariz, 
+                                                é necessário buscar a equipe 
+                                                especializada no hospital de 
                                                 tratamento.
                                             </Text>  
                                         </Text>

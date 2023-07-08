@@ -4,21 +4,11 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 import Navegacao from '../../../../features/navegacao/navegacao';
-import { useBackButton, ViewReturnedInBackPress } from '../../../../features/backpress/backpress';
 
 export default function ViewComoEhFeitaRadioterapia({ navigation }: any){
     const [ newHeightView1, setNewHeightView1 ] = useState<number>(0);
     const [ newHeightView2, setNewHeightView2 ] = useState<number>(0);
     Navegacao(10, 'ViewComoEhFeitaRadioterapia');
-    useBackButton(handler);   
-
-    function handler(){
-        console.log('backpress');
-        const nav: string = ViewReturnedInBackPress(10);
-        console.log('retornar para view', nav);
-        navigation.navigate(nav);
-        return true; 
-    }
     
     return (
         <NativeBaseProvider>

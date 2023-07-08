@@ -5,7 +5,6 @@ import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 import { Icon } from '@rneui/themed';
 import Navegacao from '../../../features/navegacao/navegacao';
-import { useBackButton, ViewReturnedInBackPress } from '../../../features/backpress/backpress';
 
 export default function ViewMitosNutricao({ navigation }: any){
     const [ newHeightView1, setNewHeightView1 ] = useState<number>(0);
@@ -13,16 +12,6 @@ export default function ViewMitosNutricao({ navigation }: any){
     const [ newHeightView3, setNewHeightView3 ] = useState<number>(0);
     const [ newHeightView4, setNewHeightView4 ] = useState<number>(0); 
     Navegacao(30, 'ViewMitosNutricao'); 
-
-    useBackButton(handler);   
-
-    function handler(){
-        console.log('backpress');
-        const nav: string = ViewReturnedInBackPress(30);
-        console.log('retornar para view', nav);
-        navigation.navigate(nav);
-        return true; 
-    }
     
     return (
         <NativeBaseProvider>
@@ -94,8 +83,8 @@ export default function ViewMitosNutricao({ navigation }: any){
                                         textAlign: 'center'
                                     }}
                                 >
-                                    Os mitos da{"\n"}
-                                    alimentação durante o{"\n"}
+                                    Os mitos da 
+                                    alimentação durante o 
                                     tratamento do câncer
                                 </Text> 
                             </Button>
@@ -159,7 +148,7 @@ export default function ViewMitosNutricao({ navigation }: any){
                                     }}
                                     onLayout={({ nativeEvent }) => {
                                         const { x, y, width, height } = nativeEvent.layout;
-                                        console.log('view1', height);
+                                        //console.log('view1', height);
                                         setNewHeightView1(height);                                       
                                     }}
                                 >
@@ -181,17 +170,17 @@ export default function ViewMitosNutricao({ navigation }: any){
                                                 textAlign: 'center'
                                             }}
                                         >
-                                            “Carboidratos (pães, farinha{"\n"}
-                                            de trigo, açúcar, arroz){"\n"}
+                                            “Carboidratos (pães, farinha 
+                                            de trigo, açúcar, arroz) 
                                             alimentam o tumor”{"\n\n"}
-                                            A principal função dos{"\n"}
-                                            carboidratos é fornecer{"\n"}
-                                            energia para as células e{"\n"}
-                                            quando você deixa de{"\n"}
-                                            consumir, o organismo pode{"\n"}
-                                            usar proteínas dos músculos,{"\n"}
-                                            causando perda de peso que{"\n"}
-                                            pode gerar prejuízo para o{"\n"}
+                                            A principal função dos 
+                                            carboidratos é fornecer 
+                                            energia para as células e 
+                                            quando você deixa de 
+                                            consumir, o organismo pode 
+                                            usar proteínas dos músculos, 
+                                            causando perda de peso que 
+                                            pode gerar prejuízo para o 
                                             corpo e o tratamento. 
                                         </Text>
                                     </View>
@@ -259,7 +248,7 @@ export default function ViewMitosNutricao({ navigation }: any){
                                     }}
                                     onLayout={({ nativeEvent }) => {
                                         const { x, y, width, height } = nativeEvent.layout;
-                                        console.log('view2', height);
+                                        //console.log('view2', height);
                                         setNewHeightView2(height);                                       
                                     }}
                                 >
@@ -281,17 +270,17 @@ export default function ViewMitosNutricao({ navigation }: any){
                                                 textAlign: 'center'
                                             }}
                                         >
-                                            “Carboidratos (pães, farinha{"\n"}
-                                            de trigo, açúcar, arroz){"\n"}
+                                            “Carboidratos (pães, farinha 
+                                            de trigo, açúcar, arroz) 
                                             alimentam o tumor”{"\n\n"}
-                                            A principal função dos{"\n"}
-                                            carboidratos é fornecer{"\n"}
-                                            energia para as células e{"\n"}
-                                            quando você deixa de{"\n"}
-                                            consumir, o organismo pode{"\n"}
-                                            usar proteínas dos músculos,{"\n"}
-                                            causando perda de peso que{"\n"}
-                                            pode gerar prejuízo para o{"\n"}
+                                            A principal função dos 
+                                            carboidratos é fornecer 
+                                            energia para as células e 
+                                            quando você deixa de 
+                                            consumir, o organismo pode 
+                                            usar proteínas dos músculos, 
+                                            causando perda de peso que 
+                                            pode gerar prejuízo para o 
                                             corpo e o tratamento. 
                                         </Text>
                                     </View>
@@ -358,7 +347,7 @@ export default function ViewMitosNutricao({ navigation }: any){
                                     }}
                                     onLayout={({ nativeEvent }) => {
                                         const { x, y, width, height } = nativeEvent.layout;
-                                        console.log('view3', height);
+                                        //console.log('view3', height);
                                         setNewHeightView3(height);                                       
                                     }}
                                 >
@@ -380,17 +369,17 @@ export default function ViewMitosNutricao({ navigation }: any){
                                                 textAlign: 'center'
                                             }}
                                         >
-                                            “Proteínas de origem animal{"\n"}
-                                            (carne vermelha, ovos,{"\n"}
-                                            queijos) devem ser cortadas{"\n"}
-                                            da alimentação, pois{"\n"}
+                                            “Proteínas de origem animal 
+                                            (carne vermelha, ovos, 
+                                            queijos) devem ser cortadas 
+                                            da alimentação, pois 
                                             alimentam o tumor”{"\n\n"}
-                                            Ingerir proteínas em{"\n"}
-                                            quantidades adequadas,{"\n"}
-                                            além de garantir a{"\n"}
-                                            manutenção de diversas{"\n"}
-                                            atividades do corpo,{"\n"}
-                                            mantém os músculos{"\n"}
+                                            Ingerir proteínas em 
+                                            quantidades adequadas, 
+                                            além de garantir a 
+                                            manutenção de diversas 
+                                            atividades do corpo, 
+                                            mantém os músculos 
                                             saudáveis. 
                                         </Text>
                                     </View>
@@ -457,7 +446,7 @@ export default function ViewMitosNutricao({ navigation }: any){
                                     }}
                                     onLayout={({ nativeEvent }) => {
                                         const { x, y, width, height } = nativeEvent.layout;
-                                        console.log('view4', height);
+                                        //console.log('view4', height);
                                         setNewHeightView4(height);                                       
                                     }}
                                 >
@@ -479,12 +468,12 @@ export default function ViewMitosNutricao({ navigation }: any){
                                                 textAlign: 'center'
                                             }}
                                         >
-                                            “Cogumelo do sol, noni,{"\n"}
-                                            graviola, chá de graviola, chá{"\n"}
-                                            verde, dentre outros muitos{"\n"}
+                                            “Cogumelo do sol, noni, 
+                                            graviola, chá de graviola, chá 
+                                            verde, dentre outros muitos 
                                             alimentos, curam o câncer”{"\n\n"}
-                                            Não existem alimentos que,{"\n"}
-                                            milagrosamente, curam o{"\n"}
+                                            Não existem alimentos que, 
+                                            milagrosamente, curam o 
                                             câncer.
                                         </Text>
                                     </View>

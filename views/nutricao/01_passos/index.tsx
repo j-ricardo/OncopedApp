@@ -5,21 +5,11 @@ import { VStack, Spacer, Center, NativeBaseProvider, Button} from "native-base";
 import React, {useState, useEffect} from 'react';
 import { Icon } from '@rneui/themed';
 import Navegacao from '../../../features/navegacao/navegacao';
-import { useBackButton, ViewReturnedInBackPress } from '../../../features/backpress/backpress';
 
 export default function ViewPassosNutricao({ navigation }: any){
     const [ newHeightView1, setNewHeightView1 ] = useState<number>(0);
     const [ newHeightView2, setNewHeightView2 ] = useState<number>(0);
     Navegacao(29, 'ViewPassosNutricao'); 
-    useBackButton(handler);   
-
-    function handler(){
-        console.log('backpress');
-        const nav: string = ViewReturnedInBackPress(29);
-        console.log('retornar para view', nav);
-        navigation.navigate(nav);
-        return true; 
-    }
 
     return (
         <NativeBaseProvider>
@@ -91,7 +81,7 @@ export default function ViewPassosNutricao({ navigation }: any){
                                         textAlign: 'center'
                                     }}
                                 >
-                                    Passos para uma{"\n"}
+                                    Passos para uma 
                                     alimentação saudável
                                 </Text> 
                             </Button>
@@ -129,11 +119,11 @@ export default function ViewPassosNutricao({ navigation }: any){
                                         textAlign: 'center'
                                     }}
                                 >
-                                    Tornar como base da{"\n"}
-                                    alimentação os alimentos{"\n"}
-                                    naturais, como frutas,{"\n"}
-                                    verduras e legumes. Quanto{"\n"}
-                                    mais colorido o prato, mais{"\n"}
+                                    Tornar como base da 
+                                    alimentação os alimentos 
+                                    naturais, como frutas, 
+                                    verduras e legumes. Quanto 
+                                    mais colorido o prato, mais 
                                     atrativo e nutritivo; 
                                 </Text>
                             </View>
@@ -169,14 +159,14 @@ export default function ViewPassosNutricao({ navigation }: any){
                                         textAlign: 'center'
                                     }}
                                 >
-                                    Utilizar óleos, gorduras, sal e{"\n"}
-                                    açúcar em pequenas{"\n"}
-                                    quantidades, evitar frituras e{"\n"}
-                                    empanados, utilizar{"\n"}
-                                    temperos naturais, preferir{"\n"}
-                                    suco da própria fruta e{"\n"}
-                                    comida feita em casa ao{"\n"}
-                                    invés de refeições prontas ou{"\n"}
+                                    Utilizar óleos, gorduras, sal e 
+                                    açúcar em pequenas 
+                                    quantidades, evitar frituras e 
+                                    empanados, utilizar 
+                                    temperos naturais, preferir 
+                                    suco da própria fruta e 
+                                    comida feita em casa ao 
+                                    invés de refeições prontas ou 
                                     industrializadas;
                                 </Text>
                             </View>
@@ -228,7 +218,7 @@ export default function ViewPassosNutricao({ navigation }: any){
                                     }}
                                     onLayout={({ nativeEvent }) => {
                                         const { x, y, width, height } = nativeEvent.layout;
-                                        console.log('view1', height);
+                                        //console.log('view1', height);
                                         setNewHeightView1(height);                                       
                                     }}
                                 >
@@ -258,11 +248,11 @@ export default function ViewPassosNutricao({ navigation }: any){
                                                 color='#5e718b'
                                             /> 
                                             <Text>
-                                                {" "}Evitar produtos onde os{"\n"}
-                                                primeiros ingredientes da lista{"\n"}
-                                                são: gordura vegetal{"\n"}
-                                                hidrogenada, sacarose, açúcar,{"\n"}
-                                                glicose, xarope de milho ou de{"\n"}
+                                                {" "}Evitar produtos onde os 
+                                                primeiros ingredientes da lista 
+                                                são: gordura vegetal 
+                                                hidrogenada, sacarose, açúcar, 
+                                                glicose, xarope de milho ou de 
                                                 glicose, farinha de trigo;
                                             </Text>
                                         </Text>
@@ -282,7 +272,7 @@ export default function ViewPassosNutricao({ navigation }: any){
                                                 color='#5e718b'
                                             /> 
                                             <Text>
-                                                {" "}Produtos diet ou light são{"\n"}
+                                                {" "}Produtos diet ou light são 
                                                 desbalanceados;
                                             </Text>  
                                         </Text>
@@ -301,14 +291,14 @@ export default function ViewPassosNutricao({ navigation }: any){
                                                 color='#5e718b'
                                             /> 
                                             <Text>
-                                                {" "}Alimentos que parecem ser{"\n"}
-                                                saudáveis, mas não são: barra{"\n"}
-                                                de cereal, peito de peru,{"\n"}
-                                                iogurte, suco de caixinha,{"\n"}
-                                                guaraná natural, molho de{"\n"}
-                                                tomate, biscoitos integrais,{"\n"}
-                                                margarina, atum em lata, chás{"\n"}
-                                                gelados industrializados e{"\n"}
+                                                {" "}Alimentos que parecem ser 
+                                                saudáveis, mas não são: barra 
+                                                de cereal, peito de peru, 
+                                                iogurte, suco de caixinha, 
+                                                guaraná natural, molho de 
+                                                tomate, biscoitos integrais, 
+                                                margarina, atum em lata, chás 
+                                                gelados industrializados e 
                                                 sobremesas lácteas.
                                             </Text>  
                                         </Text>
@@ -349,7 +339,7 @@ export default function ViewPassosNutricao({ navigation }: any){
                                         textAlign: 'center'
                                     }}
                                 >
-                                    Comer com regularidade{"\n"}
+                                    Comer com regularidade 
                                     e atenção;
                                 </Text>
                             </View>
@@ -384,11 +374,11 @@ export default function ViewPassosNutricao({ navigation }: any){
                                         textAlign: 'center'
                                     }}
                                 >
-                                    Reduzir o consumo de{"\n"}
-                                    alimentos processados e evitar{"\n"}
-                                    o consumo de alimentos{"\n"}
-                                    ultraprocessados (biscoitos{"\n"}
-                                    recheados, salgadinhos de{"\n"}
+                                    Reduzir o consumo de 
+                                    alimentos processados e evitar 
+                                    o consumo de alimentos 
+                                    ultraprocessados (biscoitos 
+                                    recheados, salgadinhos de 
                                     pacote e refrigerantes);
                                 </Text>
                             </View>
@@ -424,12 +414,12 @@ export default function ViewPassosNutricao({ navigation }: any){
                                         textAlign: 'center'
                                     }}
                                 >
-                                    Cuidar da alimentação em{"\n"}
-                                    festas e comemorações,{"\n"}
-                                    evitando as bebidas{"\n"}
-                                    industrializadas e{"\n"}
-                                    açucaradas, não pulando{"\n"}
-                                    refeições para comer mais{"\n"}
+                                    Cuidar da alimentação em 
+                                    festas e comemorações, 
+                                    evitando as bebidas 
+                                    industrializadas e 
+                                    açucaradas, não pulando 
+                                    refeições para comer mais 
                                     nas festas;
                                 </Text>
                             </View>
@@ -480,7 +470,7 @@ export default function ViewPassosNutricao({ navigation }: any){
                                                 textAlign: 'center'
                                             }}
                                         >
-                                            Controlar o peso{"\n"}
+                                            Controlar o peso 
                                             de forma consciente
                                         </Text>  
                                     </Button>
@@ -496,7 +486,7 @@ export default function ViewPassosNutricao({ navigation }: any){
                                     }}
                                     onLayout={({ nativeEvent }) => {
                                         const { x, y, width, height } = nativeEvent.layout;
-                                        console.log('view2', height);
+                                        //console.log('view2', height);
                                         setNewHeightView2(height);                                       
                                     }}
                                 >
@@ -526,7 +516,7 @@ export default function ViewPassosNutricao({ navigation }: any){
                                                 color='#5e718b'
                                             /> 
                                             <Text>
-                                                {" "}Conhecer seu peso e marcar{"\n"}
+                                                {" "}Conhecer seu peso e marcar 
                                                 consulta com um nutricionista;
                                             </Text>
                                         </Text>
@@ -546,7 +536,7 @@ export default function ViewPassosNutricao({ navigation }: any){
                                                 color='#5e718b'
                                             /> 
                                             <Text>
-                                                {" "}Não tomar suplementos{"\n"}
+                                                {" "}Não tomar suplementos 
                                                 alimentares por conta própria;  
                                             </Text>  
                                         </Text>
@@ -565,10 +555,10 @@ export default function ViewPassosNutricao({ navigation }: any){
                                                 color='#5e718b'
                                             /> 
                                             <Text>
-                                                {" "}Ocupar o tempo com{"\n"}
-                                                atividades produtivas e{"\n"}
-                                                atividade física para evitar{"\n"}
-                                                descontar a ansiedade na{"\n"}
+                                                {" "}Ocupar o tempo com 
+                                                atividades produtivas e 
+                                                atividade física para evitar 
+                                                descontar a ansiedade na 
                                                 alimentação. 
                                             </Text>  
                                         </Text>

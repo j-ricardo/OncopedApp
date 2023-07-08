@@ -4,19 +4,9 @@ import { createDrawerNavigator } from '@react-navigation/drawer';
 import { VStack, Center, NativeBaseProvider, Button} from "native-base";
 import React, { useState, useEffect } from 'react';
 import Navegacao from '../../features/navegacao/navegacao';
-import { useBackButton, ViewReturnedInBackPress } from '../../features/backpress/backpress';
 
 export default function ViewNutricao({ navigation }: any){
     Navegacao(3, 'ViewNutricao');
-    useBackButton(handler);   
-
-    function handler(){
-        console.log('backpress');
-        const nav: string = ViewReturnedInBackPress(3);
-        console.log('retornar para view', nav);
-        navigation.navigate(nav);
-        return true; 
-    }
     
     return (
         <NativeBaseProvider>
@@ -93,7 +83,7 @@ export default function ViewNutricao({ navigation }: any){
                                             textAlign: 'center' 
                                         }}
                                     >
-                                        Passos para uma{"\n"}
+                                        Passos para uma 
                                         alimentação saudável
                                     </Text> 
                                 </Button>
@@ -119,8 +109,8 @@ export default function ViewNutricao({ navigation }: any){
                                             textAlign: 'center' 
                                         }}
                                     >
-                                        Os mitos da{"\n"}
-                                        alimentação durante o{"\n"}
+                                        Os mitos da 
+                                        alimentação durante o 
                                         tratamento do câncer
                                     </Text> 
                                 </Button>
@@ -147,7 +137,7 @@ export default function ViewNutricao({ navigation }: any){
                                             textAlign: 'center' 
                                         }}
                                     >
-                                        Sondas{"\n"}
+                                        Sondas 
                                         alimentares
                                     </Text>
                                 </Button>

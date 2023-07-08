@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity, BackHandler } from 'react-native';
 import { NativeBaseProvider, Center, Button, extendTheme } from "native-base";
 import React, { useState, useEffect } from 'react';
 import { NavigationContainer, createNavigationContainerRef, CommonActions, useFocusEffect } from '@react-navigation/native';
@@ -44,8 +44,9 @@ import ViewMitosNutricao from './views/nutricao/02_mitos';
 import ViewSondasNutricao from './views/nutricao/03_sondas';
 import { Icon } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
-
-export const navigationRef = createNavigationContainerRef();
+import { ViewReturnedInBackPress } from './features/backpress/returnedback';
+import { useAppDispatch, useAppSelector } from './app/hooks/hooks';
+import { PaginaAtual, alterarPagina, paginaSelector } from "./features/pagina_atual/paginaAtualSlice";
 
 const Stack = createDrawerNavigator();
 const LinearGradient = require('expo-linear-gradient').LinearGradient;
@@ -212,7 +213,7 @@ function CustomDrawerContent(props: any) {
           >
             <Image style={styles.imgStyled} source={require('./assets/ico_nav_passos.png')}/> 
             <Text style={styles.textStyle}>
-              Passos para uma{"\n"}
+              Passos para uma 
               alimentação saudável
             </Text>
           </TouchableOpacity>
@@ -302,16 +303,48 @@ const styles = StyleSheet.create({
 
 });
 
-export default function Main() {
+function useBackButton(handler: any) {
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", handler);
+
+    return () => {
+      BackHandler.removeEventListener(
+        "hardwareBackPress",
+        handler
+      );
+    };
+
+  }, [handler]);
+}
+
+export default function Main() { 
+  const handlerBack = () => {
+    const viewSel = useAppSelector(paginaSelector);
+    const nav = ViewReturnedInBackPress(viewSel!.id);
+    console.log(nav);  
+    return true;
+  }
+
+  useEffect(() => {
+    BackHandler.addEventListener("hardwareBackPress", handlerBack);
+
+    return () => {
+      BackHandler.removeEventListener(
+        "hardwareBackPress",
+        handlerBack
+      );
+    };
+  }, [handlerBack]);
+
   return (
     <NativeBaseProvider config={config}>
-      <NavigationContainer ref={navigationRef}>
+      <NavigationContainer>
         <Stack.Navigator 
           id="LeftDrawer"
           useLegacyImplementation
           initialRouteName="initialRoute"
-          detachInactiveScreens={true}
           backBehavior='order'
+          detachInactiveScreens={true}
           screenOptions={{   
             headerTintColor: '#fff',            
             drawerPosition: 'left',
