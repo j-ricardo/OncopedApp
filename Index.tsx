@@ -42,6 +42,7 @@ import ViewNutricao from './views/nutricao';
 import ViewPassosNutricao from './views/nutricao/01_passos';
 import ViewMitosNutricao from './views/nutricao/02_mitos';
 import ViewSondasNutricao from './views/nutricao/03_sondas';
+import ViewBaixar from './views/baixar';
 import { Icon } from '@rneui/themed';
 import { useNavigation } from '@react-navigation/native';
 import { ViewReturnedInBackPress } from './features/backpress/returnedback';
@@ -249,6 +250,44 @@ function CustomDrawerContent(props: any) {
           </TouchableOpacity>
         </View>
       </View>
+      <View style={styles.viewStyle}>
+         <TouchableOpacity                            
+            activeOpacity={0.5}
+            style={styles.touchStyle}
+            onPress={() => {
+              navigation.navigate('ViewBaixar');
+            }}
+          >
+            <Image style={styles.imgStyled} source={require('./assets/ico_nav_para_baixar.png')}/> 
+            <Text style={styles.textStyle}>
+              Para baixar
+            </Text>
+          </TouchableOpacity>        
+      </View>
+      <Button
+        size={"xs"}
+        style={{
+          width: '90%',
+          borderRadius: 70,
+          marginTop: 10,
+          marginLeft: '5%',
+          marginRight: '5%',
+          backgroundColor: '#fea9a7'
+        }}
+        onPress={() => BackHandler.exitApp()}
+      >
+          <Text
+            style={{ 
+              color: "white", 
+              fontSize: 19, 
+              fontWeight: '900', 
+              textAlign: 'center',
+              textTransform: 'uppercase'
+            }}
+          >
+            Sair
+          </Text>
+      </Button>
       <DrawerItemList {...props} />
     </DrawerContentScrollView>
   );
@@ -737,6 +776,19 @@ export default function Main() {
             component={ViewSondasNutricao}
             options={{
               title: 'Sondas alimentares',
+              headerTitleStyle: {
+                display: 'none'
+              }, 
+              drawerItemStyle: {
+                display: 'none'
+              }
+            }}
+          />
+          <Stack.Screen
+            name="ViewBaixar"
+            component={ViewBaixar}
+            options={{
+              title: 'Baixar',
               headerTitleStyle: {
                 display: 'none'
               }, 

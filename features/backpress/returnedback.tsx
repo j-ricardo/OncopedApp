@@ -4,7 +4,7 @@ export function ViewReturnedInBackPress (id: number){
   if (id === 1)
     return { id : 0, nome : "TelaInicial" } as PaginaAtual;  
 
-  else if (id > 1 && id < 4)
+  else if ((id > 1 && id < 4) || id === 32)
     return { id : 1, nome : "ViewInicio" } as PaginaAtual;
 
   else if (id === 4 || id === 8 || id === 12)

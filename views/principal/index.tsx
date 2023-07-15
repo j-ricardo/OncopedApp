@@ -91,7 +91,6 @@ export default function ViewInicio({ navigation }: any) {
                         <Center>
                             <TouchableOpacity                            
                                 activeOpacity={0.5}
-                                style={{marginBottom: 30}}
                                 onPress={ ()=>{ Linking.openURL('https://drive.google.com/drive/folders/1m8-OENwa9lzqee4Wu5n1gf23B2MJJEfD')}}
                             >  
                                 <Image               
@@ -101,6 +100,25 @@ export default function ViewInicio({ navigation }: any) {
                                         resizeMode: 'contain' 
                                     }}                
                                     source={require('../../assets/ico_btn_referencias.png')} 
+                                />
+                            </TouchableOpacity>
+                        </Center>
+                        <Center>
+                            <TouchableOpacity                            
+                                activeOpacity={0.5}
+                                style={{marginBottom: 30}}
+                                onPress={() => {
+                                    console.log("click action");
+                                    navigation.navigate('ViewBaixar');
+                                }}
+                            >  
+                                <Image               
+                                    style={{
+                                        height: 180,
+                                        marginHorizontal: '20%',
+                                        resizeMode: 'contain' 
+                                    }}                
+                                    source={require('../../assets/ico_btn_para_baixar.png')} 
                                 />
                             </TouchableOpacity>
                         </Center>

@@ -270,18 +270,13 @@ export default function ViewMitosNutricao({ navigation }: any){
                                                 textAlign: 'center'
                                             }}
                                         >
-                                            “Carboidratos (pães, farinha 
-                                            de trigo, açúcar, arroz) 
-                                            alimentam o tumor”{"\n\n"}
-                                            A principal função dos 
-                                            carboidratos é fornecer 
-                                            energia para as células e 
-                                            quando você deixa de 
-                                            consumir, o organismo pode 
-                                            usar proteínas dos músculos, 
-                                            causando perda de peso que 
-                                            pode gerar prejuízo para o 
-                                            corpo e o tratamento. 
+                                            “Cortar carboidratos ajuda
+                                            no tratamento do câncer”;
+                                            Não existem evidências
+                                            científicas suficientes que
+                                            confirmem que cortar
+                                            carboidratos ajuda a “matar
+                                            o tumor” em humanos.
                                         </Text>
                                     </View>
                                 </View> 
